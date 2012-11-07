@@ -1,46 +1,49 @@
 /*
 THEME NAME: Sugar Cane
-THEME URL: http://ableparris.com
-DESCRIPTION: A Child-Theme based on Thematic
+THEME URL: http://
+DESCRIPTION: A Sweet Child-Theme built on Thematic. A simply elegant theme with magazine-like styling.
 Template: thematic
 VERSION: 0.1
 AUTHOR: Able Parris
 AUTHOR URL: http://ableparris.com
-TAGS: three columns,fixed width,simple,seo,microformats,widgets,framework,options page,hooks,filters,valid XHTML,valid CSS, blue, sifr
+TAGS: two-columns,fixed width,microformats,editor-style,theme-options,white,light,black,gray,blue
 .
 This work, like WordPress, is released under GNU General Public License, version 2 (GPL).
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 .
-Sugar Cane Special Thanks:
+
+Sugar Cane Extends Special Thanks To:
 
 Ian Stewart - http://themeshaper.com
 */
 
-@import url('../thematic/style.css');
+/* Reset browser defaults */
 @import url('../thematic/library/styles/reset.css');
+
+/* Apply basic typography styles */
 @import url('../thematic/library/styles/typography.css');
-@import url('../thematic/library/styles/sitemeta.css');
-@import url('plugins.css');
+
+/* Apply a basic layout */
 @import url('../thematic/library/layouts/2c-r-fixed.css');
+
+/* Apply basic image styles */
+@import url('../thematic/library/styles/images.css');
+
+/* Apply default theme styles and colors */
+@import url('../thematic/library/styles/default.css');
+
+/* Prepare theme for plugins */
+@import url('../thematic/library/styles/plugins.css');
 
 /* =Global Elements
 -------------------------------------------------------------- */
 
 body {
     font-family:Georgia, serif;
-   /* padding: 0px;
-    margin: 0px;*/
     font-size: 16px;
     line-height: 24px;
-   background: #eee;
-  /* background-color: #eee;*/
-
-
+    background: #eee;
 }
-p
-{
-}
-
 #wrapper {
     border-top:none;
 }
@@ -48,9 +51,9 @@ a:link, a:visited {
     color:#000;
     text-decoration:none;
 }
-a:hover {
-    text-decoration:none!important;
-        background-color: #fff!important;
+#content a:hover {
+    text-decoration:none;
+    background: transparent;
 }
 blockquote {
     font-style:italic;
@@ -59,10 +62,9 @@ blockquote {
     margin-left: -30px;
     font-size: 21px;
     line-height: 32px;
-    
     letter-spacing: .03em;
 }
-blockquote p{
+blockquote p {
     color: #00A2F3!important;
 }
 blockquote em, blockquote cite, blockquote i {
@@ -70,6 +72,13 @@ blockquote em, blockquote cite, blockquote i {
 }
 input, textarea {
     font-family:Georgia, serif;
+}
+pre {
+    margin-bottom:22px;
+    padding-left: 120px;
+}
+ins {
+	text-decoration:none;
 }
 .caps {
     font-size:10px;
@@ -79,7 +88,6 @@ input, textarea {
 .important {
     font-weight:bold;
 }
-
 /* =Header
 -------------------------------------------------------------- */
 
@@ -93,7 +101,6 @@ input, textarea {
 #branding {
     padding:0px 0 0px 0;
 }
-
 #blog-title {
     font-size:24px;
     line-height:72px;
@@ -107,25 +114,23 @@ input, textarea {
         clear: both;
         display: inline;
 }
-
 #blog-title a {
     color: #fff;
     text-decoration:none;
 }
-
 #blog-title a:hover{
-
-color: #00A2F3;
-background: none!important;
+	color: #00A2F3;
+	background: none!important;
 }
 #blog-description {
-   font-style:italic;
+	font-style:italic;
     padding:0px 0px 0px 20px;
     color:#fff;
     display: inline;
-   font-size: 14px;
-   letter-spacing: .04em;
+	font-size: 14px;
+	letter-spacing: .04em;
 }
+
 
 /* =Menu
 -------------------------------------------------------------- */
@@ -147,11 +152,9 @@ background: none!important;
     padding:0px;
     overflow:hidden; /* clears the inner float  */
     width: 750px;
-
 }
 
-.menu ul
- {
+.menu ul {
     margin:0px 0px 1px 0px;
     list-style:none;
     clear:both;
@@ -164,7 +167,6 @@ background: none!important;
     display:inline;
 }
 .menu a {
-
     display:block;
     float:left;
     margin:0px;
@@ -174,7 +176,6 @@ background: none!important;
     border-top: none;
     text-decoration:none;
     border-left: 1px solid yellow;
-
 }
 .menu a:hover {
     background:#fff;
@@ -191,32 +192,36 @@ background: none!important;
     color:#fff;
     border-left: 1px solid yellow;
 }
-
 /* =Content
 -------------------------------------------------------------- */
 
 #main {
-margin: 0px;
-padding: 0px;
-width: 960px;
+	margin: 0px;
+	padding: 0px;
+	width: 960px;
+}
+#container {
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+    float:left;
+    width:750px;
 }
 #content {
-}    
+    margin:0 0 0 0px;
+    width:750px;
+    overflow:hidden;
+    word-wrap: break-word;
+} 
 .hentry {
     border-top: 1px solid #ccc;
     margin:0px;
     padding:0px;
     background-color: none;
 }
-#container
-{
-background-color: white;
-padding: 0px;
-margin: 0px;
-background-image: url (/images/left.gif) repeat-y ;
+#content .sticky.hentry {
+	border: none ;
 }
-
-
 .p1 {
     margin:0;
     padding:0 0 36px 0;
@@ -224,16 +229,14 @@ background-image: url (/images/left.gif) repeat-y ;
 }
 .page-title {
     font-size:50px;
-            line-height: 45px;
-
+    line-height: 45px;
     font-weight:normal;
-    padding:40px 80px 5px 0px;
+    padding:40px 80px 18px 0px;
     font-family: Georgia, times new roman, serif;
     text-align: right;
     letter-spacing: .04em;
     margin: 0;
     display: block;
-    
 }
 .page-title span {
     font-size:18px;
@@ -242,18 +245,18 @@ background-image: url (/images/left.gif) repeat-y ;
 }
 .entry-title {
     font-size:50px;
-            line-height: 45px;
+    line-height: 45px;
     font-weight:normal;
     padding:20px 10px 10px 80px;
     font-family: Georgia, times new roman, serif;
-        letter-spacing: .03em;
+    letter-spacing: .03em;
     color: #000;    
 }
 .entry-title a {
     text-decoration:none;
     color:#000;
 }
-.entry-title a:hover {
+.entry-title a:hover, .page-title a:active, .page-title a:hover {
     color:#00A2F3;
 }
 .entry-meta {
@@ -268,16 +271,10 @@ background-image: url (/images/left.gif) repeat-y ;
     color:#00A2F3;
     font-style:italic;
 }
-
 .entry-meta a:hover {
 }
-.entry-meta .author {
-display: none;
-
-}
 .entry-meta .meta-sep {
-display: none;
-
+	display: none;
 }
 .entry-meta abbr {
 }
@@ -285,37 +282,27 @@ display: none;
     margin:0px;
     overflow:hidden;
     padding: 0px;
-    
 }
-img.wide 
-{
-margin: 0px;
-padding: 0px 0 0px 0;
-width: 751px!important;
+img.wide {
+	margin: 0px;
+	padding: 0px 0 0px 0;
+	width: 751px!important;
 }
-img.vert 
-{
-margin: 0px;
-padding: 10px 20px 10px 0;
-float: left;
+img.vert {
+	margin: 0px;
+	padding: 10px 20px 10px 0;
+	float: left;
 }
-
-
 .entry-content p{
     padding: 10px 80px 0px 80px;
     color: #333;
 }
-
-
-
-
 .entry-content h1, .entry-content h2 {
     font-family: Helvetica, Arial, sans-serif;
-
     font-size:18px;
     font-weight:bold;
     margin:0 0 18px 0;
-    padding:18px 0 0 0px;
+    padding:18px 0 0 80px;
     text-align: left;
 }
 .entry-content h3 {
@@ -338,24 +325,23 @@ float: left;
 }
 .entry-content h5 {
     font-family: Helvetica, Arial, sans-serif;
-
     font-size:11px;
     text-transform:uppercase;
     letter-spacing:1px;
-        padding-left: 80px;
-
+    padding-left: 80px;
 }
 .entry-content h6 {
     font-family: Helvetica, Arial, sans-serif;
-
     font-size:10px;
     text-transform:uppercase;
     letter-spacing:1px;
-        padding-left: 80px;
-
+    padding-left: 80px;
 }
 .entry-content a{
-background-color: #00A2F3;
+	background-color: #00A2F3;
+}
+.gallery-item a{
+	background-color: #fff;
 }
 .entry-content ul {
     list-style:none;
@@ -368,8 +354,8 @@ background-color: #00A2F3;
     margin:0 0 18px 0;
 }
 .entry-content abbr, .entry-content acronym, .entry-content .help {
-  border-bottom: 1px dotted #333;
-  cursor: help;
+	border-bottom: 1px dotted #333;
+	cursor: help;
 }
 .entry-content ul.xoxo {
     margin:0 0 18px 80px;
@@ -387,6 +373,7 @@ li.content-column, .entry-content li.linkcat {
 .entry-content li.linkcat ul.xoxo {
     overflow:visible;
 }
+
 .more-link {
     font-weight:bold;
     font-style:italic;
@@ -394,8 +381,6 @@ li.content-column, .entry-content li.linkcat {
     background: none!important;
 
 }
-
-
 .page-link {
     margin:0 0 18px 80px;
 }
@@ -420,9 +405,11 @@ li.content-column, .entry-content li.linkcat {
     font-style:italic;
     color:#00A2F3;
 }
-.entry-utility a:hover {
+.entry-utility a:active, .entry-utility a:hover {
     color: #000;
-
+}
+.entry-meta a.edit:active, .entry-meta a.edit:hover, .entry-utility a.edit:hover{
+	color:#f39e00;
 }
 .comments-link a {
     font-weight:bold;
@@ -525,8 +512,8 @@ text-decoration: underline;
 }
 #comments-list .comment-meta a {
     font-style:italic;
-   color: #00A2F3;
-text-decoration: underline;
+	color: #00A2F3;
+	text-decoration: underline;
 }
 #comments li p {
     margin:0;
@@ -546,22 +533,20 @@ text-decoration: underline;
 #trackbacks-list .comment-author {
     margin:0 0 18px 0;
     font-size:11px;
-background: none!important;
+	background: none!important;
 }
 #trackbacks-list .comment-author a {
     font-size:14px;
     font-weight:bold;
     color: #00A2F3;
-text-decoration: underline;
-background: none!important;
+	text-decoration: underline;
+	background: none!important;
 }
 #respond {
     background:none;
     border-top:1px solid #333;
     padding:10px 20px 0 0px;
 	width:auto;
-	/*_width:460px; /* IE6 Hack to display correctly the respond form 
-	max-width:460px; */
     margin:0px 0px 0px 80px;
     z-index:100;
 }
@@ -577,11 +562,9 @@ background: none!important;
 #respond form {
     padding:0 0 36px 0;
 }
-#respond form p
-{
+#respond form p {
     padding:0px;
 }
-
 #respond #form-section-author {
     width:230px;
     float:left;
@@ -690,7 +673,18 @@ p.solo-subscribe-to-comments:first-line {
 
 /* =Asides (widgetized areas)
 -------------------------------------------------------------- */
-
+#primary {
+    border: none;
+    padding:108px 0 0 0;
+    margin-bottom:22px;
+    margin-top: 0px;
+}
+.main-aside {
+    float:right;
+    position:relative;
+    right:10px;
+    width:200px;
+}
 .aside ul {
     margin:0 0 0 10px;
     list-style:none;
@@ -717,18 +711,33 @@ p.solo-subscribe-to-comments:first-line {
     margin:0 0 0 1.5em;
 }
 .aside a {
- color: #000;
-  border-bottom: 1px dotted #333;
-  font-style: oblique;
-  padding-bottom: 1px;
-  margin-bottom: 5px;
-  }
+ 	color: #000;
+  	border-bottom: 1px dotted #333;
+  	font-style: oblique;
+  	padding-bottom: 1px;
+  	margin-bottom: 5px;
+}
+.aside a:active {
+    color: #00A2F3!important;
+    border-bottom: none;
+    text-decoration: none;
+}
+.aside a:hover {
+    color: #00A2F3!important;
+    border-bottom: 1px dotted #00A2F3;
+    text-decoration: none;
 
-#primary {
-    border: none;
-    padding:108px 0 0 0;
-    margin-bottom:22px;
-    margin-top: 0px;
+}
+.aside .current_page_item a {
+    color: #000;
+        background-color: #00A2F3;
+            border-bottom: none;
+}
+.aside .current_page_item .page_item a:hover,
+.aside .current_page_item .page_item a:active {
+    color: #000;
+    background-color: #00A2F3;
+
 }
 /* Begin Calendar styles */
 .aside table {
@@ -813,6 +822,20 @@ p.solo-subscribe-to-comments:first-line {
     border-top:none;
     margin-top:22px;
 }
+	
+#subsidiary {
+	width:690px;
+	margin:0 0 0 60px;
+	}
+#subsidiary .sub-aside {
+	width: 335px;
+}
+#second.sub-aside {
+	margin :0;
+}
+#third.sub-aside {
+	width :100%;
+}
 #siteinfo {
     color:#000;
     font-size:11px;
@@ -863,58 +886,20 @@ color: #00A2F3;
     margin:0 !important;
 }
 
-/* From the "2c-r-fixed.css" */
-
-#container {
-    width:750px;
-    float:left;
-    padding: 0px;
-    margin: 0px;
-}
-.main-aside {
-    width:200px;
-    float:right;
-    position:relative;
-    right:10px;
-}
-#content {
-    margin:0 0 0 0px;
-    width:750px;
-    overflow:hidden;
+/*  Image attachment styles */
+.entry-attachment a {
+	background: transparent
 }
 
-/* From "Default.css */
- pre {
-    margin-bottom:22px;
-    padding-left: 120px;
-}
-.aside a:active {
-    color: #00A2F3!important;
-    border-bottom: none;
-    text-decoration: none;
-}
-.aside a:hover {
-    color: #00A2F3!important;
-    border-bottom: 1px dotted #00A2F3;
-    text-decoration: none;
-
+.meta-nav {	
+	display:none
 }
 
-.aside .current_page_item a {
-    color: #000;
-        background-color: #00A2F3;
-            border-bottom: none;
+.attachment-jpeg #content, .attachment-png #content {
+	width:auto
 }
 
-.aside .current_page_item .page_item a:hover,
-.aside .current_page_item .page_item a:active {
-    color: #000;
-    background-color: #00A2F3;
+.attachment-jpeg #container, .attachment-png #container {
+width:750px 
 
-}
-
-/* From Typography.css */
-
-ins {
-	text-decoration:none;
 }
