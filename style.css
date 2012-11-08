@@ -213,7 +213,7 @@ ins {
     overflow:hidden;
     word-wrap: break-word;
 } 
-.hentry {
+.hentry, .home #content .sticky {
     border-top: 1px solid #ccc;
     margin:0px;
     padding:0px;
@@ -245,7 +245,7 @@ ins {
 }
 .entry-title {
     font-size:50px;
-    line-height: 45px;
+    line-height: 48px;
     font-weight:normal;
     padding:20px 10px 10px 80px;
     font-family: Georgia, times new roman, serif;
@@ -426,7 +426,6 @@ li.content-column, .entry-content li.linkcat {
     padding:18px 0 0 0;
     overflow:hidden;
 }
-
 #comments .comment-navigation {
     background: none;
     border-top: none;
@@ -644,31 +643,47 @@ p.solo-subscribe-to-comments:first-line {
 -------------------------------------------------------------- */
 
 .navigation {
-    margin:20px 0 36px 0px;
+background: #dadada	
+	margin: 0;
+    padding:0;
     overflow:hidden;
 }
 .nav-previous {
 	float: left;
-	width:40%;
+	width:39%;
 	margin-left: 80px
 }
 .nav-next {
 	float: right;
-	width:40%;
+	width:39%;
 	text-align:right;
-	margin-right: 20px;
+	margin-right: 80px;
 }
 #nav-above,#nav-below {
 	width: 100%;
 }
 #nav-above {
+	border-bottom: 1px solid #ccc;
     margin:18px 0 36px 0;
+}
+#nav-below {
+	border-top: 1px solid #ccc;
+	padding-top: 16px;
+}
+.single #nav-below {
+	border-width: 0;
+}
+#nav-below, .paged div.hentry {
+	margin-top:-1px; /* pagenation & content widget border correction */
 }
 .home #nav-above, .single #nav-above {
     display:none;
 }
 .paged #nav-above {
-    display:block;
+    border-bottom: 1px solid #CCCCCC;
+    display: block;
+    margin: 0;
+   	padding: 12px 0 16px;
 }
 
 /* =Asides (widgetized areas)
@@ -779,21 +794,32 @@ p.solo-subscribe-to-comments:first-line {
     margin:4px 0 10px 0;
 }
 /* End Search styles */
-#content .widgetcontainer {
-    border-top:1px solid #e0e0e0;
-    padding:35px 1px 18px 1px;
-    margin:18px 0 36px 0;
 }
-#index-top .widgetcontainer,
-#single-top .widgetcontainer,
-#page-top .widgetcontainer {
+#index-top.aside,
+#single-top.aside,
+#page-top.aside, {
     border-top:none;
-    border-bottom:1px solid #e0e0e0;
-    padding:0 1px 53px 1px;
-    margin:0 0 36px 0;
+    padding-left: 1px;
+    margin:0 ;
 }
-#content .aside:first-child .widgetcontainer:first-child {
-    padding-top:18px;
+#content #index-insert {
+	border-width: 1px 0 0 0;
+}
+
+#content .aside {
+	border-bottom-color: #ccc;
+	border-bottom-style: solid;
+	margin:0;
+	padding:36px 0 48px;
+}
+#content #index-top {
+	border-width: 0 0 1px;
+}
+.paged #content #index-top {
+	border-bottom-width: 0;
+}
+#content #index-bottom {
+	border-width: 1px 0 1px ;
 }
 .page #content .aside:first-child .widgetcontainer:first-child {
     padding-top:0;
@@ -819,29 +845,41 @@ p.solo-subscribe-to-comments:first-line {
 -------------------------------------------------------------- */
 
 #footer {
+	background: #000;
     border-top:none;
-    margin-top:22px;
+    margin-top: 0;
+    width: 750px;
+   
 }
-	
 #subsidiary {
-	width:690px;
-	margin:0 0 0 60px;
-	}
+	width:710px;
+	margin:0 0 44px 10px;
+	padding-top: 18px
+	letter-spacing: .4px;
+}
+#subsidiary h3 {
+	color: #fff;
+	margin-bottom: 6px;
+}
 #subsidiary .sub-aside {
-	width: 335px;
+	color: #fff;
+	width: 345px;
+	margin-bottom: 18px;
 }
 #second.sub-aside {
-	margin :0;
+	margin-right :0;
 }
 #third.sub-aside {
 	width :100%;
+	margin-bottom: 18px;
 }
 #siteinfo {
+	background: #eee;
     color:#000;
     font-size:11px;
     line-height:18px;
-    padding:22px 0 44px 80px;
-    margin-left: 0px;
+    padding:66px 0 88px 30px;
+    margin-left: 0;
 }
 #siteinfo a {
     color:#0380BF;
@@ -890,7 +928,18 @@ color: #00A2F3;
 .entry-attachment a {
 	background: transparent
 }
-
+.entry-content a img {
+	margin-bottom: -1px
+}
+.entry-content p img {
+    max-width: 751px;
+}
+.entry-content p .pull {
+ margin-left: -80px;
+}
+.entry-content p .push {
+ margin-right: -80px;
+}
 .meta-nav {	
 	display:none
 }
@@ -902,4 +951,14 @@ color: #00A2F3;
 .attachment-jpeg #container, .attachment-png #container {
 width:750px 
 
+}
+
+.entry-content .wp-post-image {
+margin-right: 80px;
+}
+
+#content .wp-post-image, #content.featured-image{
+margin-right: 0;
+border:none;
+padding-right: 0;
 }
