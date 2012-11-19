@@ -1387,7 +1387,8 @@ img.aligncenter {
 }
 .wp-caption-text,
 .gallery-caption {
-    color:#666;
+    color:#777;
+    font-style: italic;
     font-size:13px;
     line-height:18px;
 }
