@@ -53,7 +53,7 @@ function sugar_cane_featured_image($post) {
 		if( is_single() ) {
 			$attr =  array('class'=>('featured-image'));
 			$post = get_the_post_thumbnail (get_the_ID(), $size, $attr) . $post;
-		} elseif ( !is_archive() ) {
+		} else {
 			$attr = apply_filters( 'thematic_post_thumb_attr', array('title'	=> sprintf( esc_attr__('Permalink to %s', 'thematic'), the_title_attribute( 'echo=0' ) ), 'class'=>('featured-image') ) );
 			$post = sprintf('<a class="entry-thumb" href="%s" title="%s">%s</a>',
 									get_permalink() ,
@@ -152,5 +152,41 @@ function childtheme_override_nav_below() {
 	
 <?php
 		}
+	}
+}
+
+/**
+ * Filtering Thematic's widgetized areas 
+ *
+ * Alter the Single Insert Aside args hook and callback 
+ *
+ * @todo evaluate localization options for child theme 
+ * @param mixed $widgetized_areas
+ */
+function sugar_cane_widgetized_areas_filter($widgetized_areas) {
+	
+	$widgetized_areas['Single Insert']['args']['name'] = 'Singlular Insert Above Comments';
+	$widgetized_areas['Single Insert']['args']['description'] = 'The widget area inserted above comments on a single post and page views.';
+	$widgetized_areas['Single Insert']['function'] = 'sugar_cane_single_insert';
+	$widgetized_areas['Single Insert']['action_hook'] = 'thematic_abovecomments';
+	
+	return $widgetized_areas;
+}
+
+add_filter('thematic_widgetized_areas', 'sugar_cane_widgetized_areas_filter');
+
+
+/**
+ * Callback for the Singular Insert Aside
+ *
+ * Conditionally displayed when coments are active or closed but comments are present.
+ *
+ */
+ function sugar_cane_single_insert() {
+
+	if ( is_active_sidebar( 'single-insert' ) && (  comments_open() || (get_comments_number() > 0) ) ) {
+		echo thematic_before_widget_area( 'single-insert' );
+		dynamic_sidebar( 'single-insert' );
+		echo thematic_after_widget_area( 'single-insert' );
 	}
 }

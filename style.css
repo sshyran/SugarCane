@@ -538,7 +538,7 @@ ins:before {
 	text-transform:uppercase;
 }
 .entry-content a {
-background-color:#0096e0;
+	background-color:#0096e0;
 }
 .entry-content ul {
 	margin:0 20px 18px 30px;
@@ -714,6 +714,9 @@ li.content-column,
 	color:#666;
 	font-size:11px;
 	padding:0 0 9px 46px;
+}
+.comment.even {
+	border:1px solid #f3f3f3;
 }
 .comment-reply-link {
 	font-size:11px;
@@ -1145,8 +1148,8 @@ color: #f30e00;
 	text-transform:none;
 }
 #content .aside ul {
-	background:#e087a8;
-	color: #FAFAFA;
+	background:#fafafa;
+	color:#333;
 	letter-spacing:.4px;
 	margin:0;
 	padding:18px 30px 32px;
@@ -1155,22 +1158,46 @@ color: #f30e00;
 	font-size:16px;
 }
 #content .aside h3 {
-	color:#fff;
+	color:#333;
 	font-size:24px;
 	line-height:26px;
 	font-weight:700;
 	padding:8px 0 20px;
 }
-#index-insert.aside, #index-bottom.aside, #page-bottom.aside, #single-bottom.aside {
+#index-top.aside,
+#page-top.aside,
+#single-top.aside {
+	border-bottom: 1px solid #DDDDDD;
+}
+
+#index-insert.aside, 
+#index-bottom.aside,
+#page-bottom.aside,
+#single-bottom.aside {
+	border-bottom: 1px solid #DDDDDD;
+	border-top: 1px solid #DDDDDD;
+}
+
+#index-bottom.aside,
+#page-bottom.aside,
+#single-bottom.aside {
+	border-top: 1px solid #DDDDDD;
+}
+
+#index-insert.aside,
+#index-bottom.aside,
+#page-bottom.aside,
+#single-bottom.aside {
 	margin-top: -1px;
 	margin-bottom: 0;
 }
 #single-insert.aside ul {
-	background-color: #87c2e0;
+	background-color: #f7f7f7;
+	border:1px solid #f2f2f2;
 }
 #single-insert.aside {
-	margin-left: 80px;
-	margin-right: 80px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 
 /* !Main Asides */
