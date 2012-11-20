@@ -385,7 +385,7 @@ ins:before {
 	overflow:hidden;
 	padding:0;
 	position:relative;
-	width:990px;
+	width:960px;
 }
 #container {
 	background-color:#fff;
@@ -403,7 +403,8 @@ ins:before {
 	padding:0;
 }
 .blog .hentry,
-.archive .hentry {
+.archive .hentry,
+.search .hentry {
 	border-bottom:1px solid #ddd;
 }
 .p1 {
@@ -420,9 +421,9 @@ ins:before {
 	margin:0;
 	padding:40px 30px 18px;
 }
-.archive .page-title {
+.archive .page-title, .search .page-title {
 	background-color: #87c2e0;
-	color:#fafafa;
+	color:#f7f7f7;
 }
 .attachment .page-title {
 	font-style:italic;
@@ -840,6 +841,7 @@ li.content-column,
 -------------------------------------------------------------- */
 
 #author-info {
+	background:#f7f7f7;
 	color: #333;
     border-bottom: 1px solid #DDDDDD;
     overflow: hidden;
@@ -858,7 +860,7 @@ li.content-column,
     height:72px;
     margin:0 15px 0 0;
     padding:5px;
-    background:#eee;
+    background:#ddd;
     position:relative;
     top:4px;
 }
@@ -1029,7 +1031,6 @@ li.content-column,
 	font-size:12px;
 	line-height:18px;
 }
-
 .aside ul {
 	list-style:none;
 	background:transparent;
@@ -1039,21 +1040,17 @@ li.content-column,
 	margin:0;
 	padding:0 0 0 10px;
 }
-
 .aside ul ul {
 	list-style:none;
 	margin:0;
 	padding:0;
 }
-
 .aside ul ul li {
 	padding:1px 0;
 }
-
 .aside ul ul ul {
 	margin:0 0 0 1.5em;
 }
-
 .aside h3, .aside caption {
 	font-size: 21px;
 	line-height: 28px;
@@ -1063,15 +1060,16 @@ li.content-column,
 }
 
 /* Tag Cloud */
+
 .widget_tag_cloud {
 	margin:0 0 22px;
 }
 
 /* Search */
+
 .aside form {
 	margin-bottom:22px;
 }
-
 .aside #searchsubmit {
 	display:none;
 }
@@ -1148,7 +1146,7 @@ color: #f30e00;
 	text-transform:none;
 }
 #content .aside ul {
-	background:#fafafa;
+	background:#f7f7f7;
 	color:#333;
 	letter-spacing:.4px;
 	margin:0;
@@ -1214,7 +1212,7 @@ color: #f30e00;
 .main-aside {
 	float:right;
 	position:relative;
-	right:30px;
+	right:2px;
 	width:210px;
 }
 #secondary {
@@ -1381,7 +1379,8 @@ img.aligncenter {
 	margin: 0 5px;
 }
 #content .gallery img {
-    border: 1px solid #ccc;
+	background-color:#f7f7f7;
+    border: 1px solid #eee;
 	margin:0;
 	padding: 15px;
 }
@@ -1468,7 +1467,9 @@ img.wide,
 
 /* Page Templates 
 -------------------------------------------------------------- */
-
+.search #content form {
+	padding-left:80px
+}
 .page-template-template-page-fullwidth-php #container {
 	width:750px;
 }
