@@ -413,9 +413,15 @@ ins {
 	margin:0;
 	padding:40px 30px 18px;
 }
-.archive .page-title, .search .page-title {
+.archive .page-title,
+.search .page-title,
+.attachment .page-title,
+.attachment .page-title a {
 	background-color: #60B6E1;
 	color:#f7f7f7;
+}
+.attachment .page-title a:hover {
+	color: #333;
 }
 .attachment .page-title {
 	font-style:italic;
